@@ -1,0 +1,22 @@
+
+//variáveis 
+$cor-bg: hsl(235, 21%, 11%);
+$bg-input: hsl(235, 24%, 19%);
+
+
+//reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    min-height: 100vh;
+    background: $cor-bg;
+}
+
+ul {
+	list-style: none;
+}
