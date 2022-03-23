@@ -1,3 +1,11 @@
+:root {
+  background: #161722;
+  background-image: url("../assets/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +14,156 @@
 }
 
 body {
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   min-height: 100vh;
-  background: #161722;
 }
 
 ul {
   list-style: none;
+}
+
+.aplicativo {
+  width: 40%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.aplicativo .titulo {
+  font-size: 30px;
+  font-weight: 700;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 5px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  cursor: pointer;
+}
+
+.adiciona-tarefa {
+  position: relative;
+}
+
+.botao {
+  position: absolute;
+  left: 25px;
+  top: 30%;
+}
+
+.check {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input {
+  background-color: #25273c;
+  display: block;
+  color: #fff;
+  font-size: 20px;
+  border-radius: .3rem;
+  width: 100%;
+  height: 60px;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  padding-left: 60px;
+  font-size: 15px;
+  font-family: "Spartan", sans-serif;
+}
+
+.tarefas {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 20px;
+  border-bottom: 1px solid #777a92;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+ul li {
+  min-height: 50px;
+}
+
+.detalhes-tarefas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+  font-size: 10px;
+  font-family: "Spartan", sans-serif;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.detalhes-tarefas
+.filtro
+button {
+  margin-right: 20px;
+  font-family: "Spartan", sans-serif;
+  font-size: 10px;
+}
+
+.itens-restantes {
+  font-family: "Spartan", sans-serif;
+  font-size: 10px;
+  color: #777a92;
+}
+
+.botao-limpar {
+  font-family: "Spartan", sans-serif;
+  font-size: 10px;
+}
+
+.detalhes-tarefas button {
+  color: #777a92;
+}
+
+.detalhes-tarefas button:hover {
+  color: #fff;
+}
+
+.detalhes-tarefas button.todas-as-tarefas {
+  color: #3a7bfd;
 }
 /*# sourceMappingURL=style.css.map */

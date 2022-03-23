@@ -1,10 +1,24 @@
 
 //variáveis 
-$cor-bg: hsl(235, 21%, 11%);
-$bg-input: hsl(235, 24%, 19%);
-
+$bg: hsl(235, 21%, 11%);
+$input-bg: hsl(235, 24%, 19%);
+$az-cz-claro: hsl(236, 33%, 92%);
+$az-cz-escuro: hsl(234, 11%, 52%);
+$check: (hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
+$btn-filtro: hsl(220, 98%, 61%);
+$branco: #fff;
+$bg-img: url('../assets/bg-desktop-dark.jpg');
+$fonte: 'Spartan', sans-serif;
 
 //reset
+:root {
+    background: $bg;
+    background-image: $bg-img;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: $branco;
+    
+}
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +26,145 @@ $bg-input: hsl(235, 24%, 19%);
 }
 
 body {
-    font-family: 'Spartan', sans-serif;
+    font-family: $fonte;
     min-height: 100vh;
-    background: $cor-bg;
+    
 }
 
 ul {
 	list-style: none;
+}
+
+//estilização do aplicativo 
+
+
+.aplicativo {
+    width: 40%;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    
+    
+    .titulo {
+        font-size: 30px;  
+        font-weight: 700;
+        box-sizing: border-box;
+        letter-spacing: 5px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        cursor: pointer;
+       
+        
+    }
+}
+
+.adiciona-tarefa{
+    position: relative;
+}
+
+
+
+.botao {
+    position: absolute;
+    left: 25px;
+    top: 30%;
+}
+
+.check {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid $branco;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    background-color: $input-bg;
+    display: block;
+    color: $branco;
+    font-size: 20px;
+    border-radius: .3rem;
+    width: 100%;
+    height: 60px;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    padding-left: 60px;
+    font-size: 15px;
+    font-family: $fonte;
+}
+
+.tarefas{
+    width: 100%;
+    display: grid;
+    position: relative;
+}
+
+
+ul {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid $az-cz-escuro;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+        min-height: 50px;
+    }
+}
+
+.detalhes-tarefas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 10px;
+    font-family: $fonte;
+}
+
+button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.detalhes-tarefas 
+.filtro 
+button{
+    margin-right: 20px;
+    font-family: $fonte;
+    font-size: 10px;
+}
+
+.itens-restantes {
+    font-family: $fonte;
+    font-size: 10px;
+    color: $az-cz-escuro;
+}
+
+.botao-limpar {
+    font-family: $fonte;
+    font-size: 10px;
+}
+
+.detalhes-tarefas button {
+    color: $az-cz-escuro;
+}
+
+.detalhes-tarefas button:hover {
+    color: $branco;
+}
+
+.detalhes-tarefas button.todas-as-tarefas {
+    color: $btn-filtro;
 }
