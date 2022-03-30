@@ -35,13 +35,11 @@ ul {
 
 .aplicativo .titulo {
   font-size: 30px;
-  font-weight: 700;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   letter-spacing: 5px;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 30px;
-  cursor: pointer;
 }
 
 .adiciona-tarefa {
@@ -73,20 +71,35 @@ ul {
           align-items: center;
 }
 
-input {
+#inserir-tarefa {
   background-color: #25273c;
   display: block;
   color: #fff;
   font-size: 20px;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   width: 100%;
   height: 60px;
-  padding: 5px 10px;
+  padding: 5px 1px;
+  padding-left: 60px;
   outline: none;
   border: none;
-  padding-left: 60px;
   font-size: 15px;
   font-family: "Spartan", sans-serif;
+  margin-bottom: 30px;
+}
+
+.adiciona-tarefa,
+.tarefas {
+  background-color: #25273c;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 0.3rem;
+}
+
+.adiciona-tarefa:hover,
+.tarefas:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
 }
 
 .tarefas {
@@ -96,11 +109,11 @@ input {
   position: relative;
 }
 
-ul {
+.lista-tarefas {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 20px;
+  padding: 25px;
   border-bottom: 1px solid #777a92;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -110,7 +123,7 @@ ul {
           justify-content: space-between;
 }
 
-ul li {
+.lista-tarefas li {
   min-height: 50px;
 }
 
@@ -126,7 +139,6 @@ ul li {
           align-items: center;
   padding: 20px;
   font-size: 10px;
-  font-family: "Spartan", sans-serif;
 }
 
 button {
@@ -137,8 +149,7 @@ button {
 }
 
 .detalhes-tarefas
-.filtro
-button {
+.filtro button {
   margin-right: 20px;
   font-family: "Spartan", sans-serif;
   font-size: 10px;
@@ -148,11 +159,6 @@ button {
   font-family: "Spartan", sans-serif;
   font-size: 10px;
   color: #777a92;
-}
-
-.botao-limpar {
-  font-family: "Spartan", sans-serif;
-  font-size: 10px;
 }
 
 .detalhes-tarefas button {
@@ -165,5 +171,43 @@ button {
 
 .detalhes-tarefas button.todas-as-tarefas {
   color: #3a7bfd;
+}
+
+.botao-limpar {
+  font-family: "Spartan", sans-serif;
+  font-size: 10px;
+}
+
+@media (max-width: 767px) and (min-width: 300px) {
+  :root {
+    background-image: url("../assets/bg-mobile-dark.jpg");
+  }
+  .aplicativo {
+    width: 85%;
+    height: 20px;
+    margin-top: -30px;
+  }
+  .adiciona-tarefa:hover,
+  .tarefas:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .filtro {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    padding: 10px 20px;
+    background-color: #25273c;
+  }
+  .detalhes-tarefas button:hover {
+    color: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */

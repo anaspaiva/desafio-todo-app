@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,18 +21,18 @@
     
       <h1 class="titulo"> T O D O </h1>
       <div class="adiciona-tarefa">
-        <span class="botao check"></span>
-        <input placeholder="Criar nova tarefa...">
+        <span class="botao check" id="btn-add-tarefa"></span>
+        <input id="inserir-tarefa" placeholder="Criar nova tarefa...">
       </div>
     
       <div class="tarefas"> 
-        <ul></ul>
+        <ul id="lista-tarefas"></ul>
         <div class="detalhes-tarefas">
           <div class="itens-restantes">0 itens restantes</div>
           <div class="filtro">
             <button class="todas-as-tarefas">Tudo</button>
             <button class="tarefas-ativas">A fazer</button>
-            <button class="tarefas-feitas">Feitas</button>
+            <button class="tarefas-feitas">Feito</button>
           </div>
           <div class="limpar">
             <button class="botao-limpar">Limpar tudo</button>
@@ -41,7 +41,7 @@
       </div>
     </div>
     
-    <script src="./js/index.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>
