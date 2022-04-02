@@ -1,0 +1,16 @@
+body {
+    background: $bg;
+    background-image: $bg-img-dsk;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: $branco;
+    font-family: $fonte;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) and (min-width: 300px) {
+
+body {
+    background-image: $bg-img-mb;
+    }
+}

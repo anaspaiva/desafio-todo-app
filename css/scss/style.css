@@ -1,0 +1,269 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea:focus, input:focus, select:focus {
+  -webkit-box-shadow: 0 0 0 0;
+          box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.aplicativo {
+  width: 40%;
+  min-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 1;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.aplicativo .titulo {
+  font-size: 30px;
+  font-weight: 700;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  letter-spacing: 5px;
+  padding: 30px 0;
+}
+
+#btn-add-tarefa {
+  margin: 17px 0;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid #777a92;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  left: 25px;
+  margin: -3px 0;
+}
+
+#inserir-tarefa {
+  background-color: #25273c;
+  display: block;
+  color: #fff;
+  border-radius: 0.3rem;
+  height: 50px;
+  padding: 5px 0px;
+  padding-left: 60px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  margin-bottom: 30px;
+  width: 89%;
+  -webkit-box-shadow: 0 0 1em #161722;
+          box-shadow: 0 0 1em #161722;
+}
+
+.tarefas {
+  background-color: #25273c;
+  border-radius: 0.3rem;
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  -webkit-box-shadow: 0 0 1em #161722;
+          box-shadow: 0 0 1em #161722;
+  color: #777a92;
+}
+
+.detalhes-tarefas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin: 10px;
+  font-size: 12px;
+}
+
+button {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.detalhes-tarefas
+.filtro button {
+  margin-right: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+}
+
+.detalhes-tarefas
+.filtro button:hover {
+  color: #fff;
+}
+
+.tarefa {
+  padding: 20px 0;
+  border-bottom: solid 1px #4d5066;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+}
+
+.tarefa .tarefa-descricao {
+  margin-left: 60px;
+  color: #e4e5f1;
+}
+
+.tarefa .remover-tarefa {
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  margin-left: 250px;
+}
+
+img {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  margin-left: 10px;
+}
+
+.detalhes-tarefas button {
+  color: #777a92;
+}
+
+.detalhes-tarefas button.todas-as-tarefas {
+  color: #3a7bfd;
+}
+
+.botao-limpar {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 12px;
+}
+
+.botao-limpar:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) and (min-width: 300px) {
+  #inserir-tarefa {
+    width: 70%;
+    padding: 5px 33px;
+    padding-left: 60px;
+  }
+  .adiciona-tarefa:hover,
+  .tarefas:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .filtro {
+    background-color: #25273c;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    padding: 10px 25px;
+    width: 83%;
+  }
+  .detalhes-tarefas button:hover {
+    color: none;
+  }
+  .tarefa .remover-tarefa {
+    margin-left: 125px;
+  }
+  .filtro {
+    border-radius: 0.3rem;
+  }
+}
+
+body {
+  background: #161722;
+  background-image: url("../../assets/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) and (min-width: 300px) {
+  body {
+    background-image: url("../../assets/bg-mobile-dark.jpg");
+  }
+}
+/*# sourceMappingURL=style.css.map */

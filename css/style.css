@@ -127,6 +127,21 @@ ul {
   min-height: 50px;
 }
 
+.riscar-tarefa-concluida :nth-child(1) {
+  background: #57ddff, #c058f3;
+}
+
+.riscar-tarefa-concluida :nth-child(1) img {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+
+.riscar-tarefa-concluida :nth-child(2) {
+  text-decoration: line-through;
+  color: #777a92;
+}
+
 .detalhes-tarefas {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,6 +170,11 @@ button {
   font-size: 10px;
 }
 
+.detalhes-tarefas
+.filtro button:hover {
+  color: #fff;
+}
+
 .itens-restantes {
   font-family: "Spartan", sans-serif;
   font-size: 10px;
@@ -163,10 +183,6 @@ button {
 
 .detalhes-tarefas button {
   color: #777a92;
-}
-
-.detalhes-tarefas button:hover {
-  color: #fff;
 }
 
 .detalhes-tarefas button.todas-as-tarefas {
@@ -178,7 +194,11 @@ button {
   font-size: 10px;
 }
 
-@media (max-width: 767px) and (min-width: 300px) {
+.botao-limpar:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) and (min-width: 300px) {
   :root {
     background-image: url("../assets/bg-mobile-dark.jpg");
   }
