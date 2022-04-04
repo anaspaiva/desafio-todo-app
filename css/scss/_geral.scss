@@ -1,13 +1,10 @@
 .aplicativo {
     width: 40%;
     min-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     position: relative;
     z-index: 1;
     padding-top: 50px;
-    padding-bottom: 20px;
-    
 
     .titulo {
         font-size: 30px;
@@ -24,8 +21,7 @@
     margin: 17px 0;
 }
 
-.check{
-    
+.check {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -56,10 +52,6 @@
     margin-bottom: 30px;
     width: 89%;
     box-shadow: 0 0 1em #161722;
-    
-    
-   
-    
 }
 
 .tarefas {
@@ -70,8 +62,6 @@
     box-shadow: 0 0 1em #161722;
     color: $az-cz-escuro;
 }
-
-
 
 .detalhes-tarefas {
     display: flex;
@@ -105,28 +95,46 @@ button {
     display: flex;
     align-items: center;
     font-size: 18px;
+    
 
     .tarefa-descricao{
-        margin-left: 60px;
         color: $az-cz-claro;
-    }
-    .remover-tarefa{
-        position: absolute;
+        cursor: auto;
+        margin-left: 60px;
+    } 
+
+    .remover-tarefa {
         height: 15px;
         width: 15px;
-        margin-left: 250px;
     }
-        
-  }
+}
 
-
-img {
-    width: 10px;
-    height: 10px;
+.check-tarefa{
     background: transparent;
-    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1.75px solid $az-cz-claro;
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarefa-concluida {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    :nth-child(1){
+        background: $check-gradient;
+        border-color: #57ddff; 
+    }
+    :nth-child(2){
+        text-decoration: line-through;
+        color: $az-cz-escuro;
+    }
 
 }
+
 
 
 .detalhes-tarefas button {
@@ -149,8 +157,15 @@ img {
 
 @media (max-width: 768px) and (min-width: 300px) {
 
+    .aplicativo {
+        min-width: 350px;
+        .titulo { 
+            padding-top: 10px;
+        }
+    }
+
     #inserir-tarefa {
-        width: 70%;
+        width: 73%;
         padding: 5px 33px;
         padding-left: 60px;
     }
@@ -159,6 +174,7 @@ img {
     .tarefas:hover {
         transform: none;
     }
+
     .filtro {
         background-color: $input-bg;
         display: flex;
@@ -167,19 +183,13 @@ img {
         bottom: -60px;
         left: 0;
         padding:  10px 25px;
-        width: 83%;
+        width: 86%;
     } 
 
     .detalhes-tarefas button:hover {
         color: none;
     }
-    .tarefa {
-    
-        .remover-tarefa {
-            margin-left: 125px;
-
-        }   
-    }
+ 
     .filtro {
         border-radius: 0.3rem;
 

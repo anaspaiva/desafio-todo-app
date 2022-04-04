@@ -42,7 +42,7 @@ inserirTarefa.addEventListener('keyup', function (e) {
 });
 
 botaoEnterTarefa.addEventListener('click',()=>{
-  add()
+  add();
 })
 
 function removerTarefa(id) {
@@ -67,11 +67,12 @@ function atualizarLista(lista) {
       listaTarefas.innerHTML += `
         <li class="tarefa">
           <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
-            <span class="check nova-tarefa"></span>
-            <div class="tarefa-descricao">${lista[i].tarefa}</div>
+          <span class="check-tarefa"</span>
+          <div class="tarefa-descricao">${lista[i].tarefa}</div>
           </a>
+          
           <a href="#" class="remover-tarefa" onclick="removerTarefa(${i});">
-            <img src="../assets/icon-cross.svg" class="remover-tarefa" alt="Remover Tarefa">
+            <img class="remover-tarefa" src="../assets/icon-cross.svg" alt="Remover Tarefa">
           </a>
         </li>
       `;
@@ -80,12 +81,13 @@ function atualizarLista(lista) {
       listaTarefas.innerHTML += `
         <li class="tarefa">
           <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
-            <span class="check nova-tarefa"> 
-            <img src="../assets/icon-check.svg" class="img-check" alt="Tarefa concluída"></span>
+            <span class="check"> 
+            <img class="check-tarefa" src="../assets/icon-check.svg" alt="Tarefa concluída"></span>
             <div class="tarefa-descricao">${lista[i].tarefa}</div>
           </a>
+          
           <a href="#" class="remover-tarefa" onclick="removerTarefa(${i});">
-            <img src="../assets/icon-cross.svg" class="remover-tarefa" alt="Remover Tarefa">
+            <img class="remover-tarefa" src="../assets/icon-cross.svg"  alt="Remover Tarefa">
           </a>
         </li>
       `;
@@ -93,8 +95,8 @@ function atualizarLista(lista) {
   }
 }
 
-function riscarTarefa(id) {
-  e.preventDefault();
+function marcarTarefa(id) {
+  event.preventDefault();
 
   if (!lista[id].check) {
     lista[id].check = true;
