@@ -15,11 +15,11 @@ let contarTarefa = JSON.parse(localStorage.getItem("contarTarefa")) || 0;
 atualizarLista(lista);
 alteraContagemTarefa(contarTarefa);
 
-inserirTarefa.addEventListener('keyup', function (e) {
+inserirTarefa.addEventListener('keyup', function (event) {
 
-  let key = e.which || e.keyCode;
+  let enter = event.which;
 
-  if (key == 13) {
+  if (enter == 13) {
     conteudo = this.value;
 
     if (conteudo != '') {
@@ -46,7 +46,7 @@ botaoEnterTarefa.addEventListener('click',()=>{
 })
 
 function removerTarefa(id) {
-  e.preventDefault();
+  event.preventDefault();
 
   if (!lista[id].check) {
     contarTarefa--;
@@ -59,15 +59,14 @@ function removerTarefa(id) {
   salvarLocalStorage();
 }
 
-
 function atualizarLista(lista) {
   listaTarefas.innerHTML = '';
   for (let i = 0; i < lista.length; i++) {
     if (lista[i].check == false) {
       listaTarefas.innerHTML += `
-        <li class="tarefa">
+        <li class="tarefa-inserida">
           <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
-          <span class="check-tarefa"</span>
+          <span class="check"></span>
           <div class="tarefa-descricao">${lista[i].tarefa}</div>
           </a>
           
@@ -79,8 +78,8 @@ function atualizarLista(lista) {
     }
     else {
       listaTarefas.innerHTML += `
-        <li class="tarefa">
-          <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
+        <li class="tarefa-inserida">
+          <a href="#" class="tarefa-concluida marcar-tarefa-concluida" onclick="marcarTarefa(${i});">
             <span class="check"> 
             <img class="check-tarefa" src="../assets/icon-check.svg" alt="Tarefa concluída"></span>
             <div class="tarefa-descricao">${lista[i].tarefa}</div>

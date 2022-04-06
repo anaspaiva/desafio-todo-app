@@ -13,12 +13,10 @@
         letter-spacing: 5px;
         padding: 30px 0;
     }
-    
 }
 
-
 #btn-add-tarefa {
-    margin: 17px 0;
+    margin: 19px 0;
 }
 
 .check {
@@ -27,14 +25,23 @@
     border-radius: 50%;
     background: transparent;
     border: 1px solid $az-cz-escuro;
-    cursor: pointer;
+    position: absolute;
+    left: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 25px;
-    margin: -3px 0;
-    
+    cursor: pointer;
+
+    .check-tarefa {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: transparent; 
+    }
+}
+
+.check:hover {
+    border-color: hsl(251, 84%, 64%);
 }
 
 #inserir-tarefa {
@@ -60,7 +67,6 @@
     display: grid;
     position: relative;
     box-shadow: 0 0 1em #161722;
-    color: $az-cz-escuro;
 }
 
 .detalhes-tarefas {
@@ -79,7 +85,11 @@ button {
     cursor: pointer;
 }
 
-.detalhes-tarefas 
+.itens-restantes {
+    color: $az-cz-escuro;
+    flex:none;
+}
+
 .filtro button {
     margin-right: 20px;
     font-family: $fonte;
@@ -89,53 +99,44 @@ button {
     }
 }
 
-.tarefa {
-    padding: 20px 0;
+.tarefa-inserida {
     border-bottom: solid 1px $cinza;
     display: flex;
-    align-items: center;
+    justify-content: center;
     font-size: 18px;
-    
+    padding: 20px 0;
 
     .tarefa-descricao{
         color: $az-cz-claro;
-        cursor: auto;
-        margin-left: 60px;
+        cursor: pointer;
+        margin-left: 42px;
+        border-radius: 0;
     } 
-
     .remover-tarefa {
         height: 15px;
         width: 15px;
     }
 }
 
-.check-tarefa{
-    background: transparent;
-    width: 20px;
-    height: 20px;
-    border: 1.75px solid $az-cz-claro;
-    border-radius: 50% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tarefa-concluida {
-    display: flex;
-    align-items: center;
-    width: 90%;
+.marcar-tarefa-concluida  {
     :nth-child(1){
-        background: $check-gradient;
-        border-color: #57ddff; 
+        background: $gradient; 
+        .check-tarefa {
+        background: transparent;
+        }
     }
+    
     :nth-child(2){
         text-decoration: line-through;
         color: $az-cz-escuro;
     }
-
 }
 
-
+.tarefa-concluida{
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
 
 .detalhes-tarefas button {
     color: $az-cz-escuro;
@@ -155,7 +156,7 @@ button {
 
 // Mobile
 
-@media (max-width: 768px) and (min-width: 300px) {
+@media (max-width: 768px){
 
     .aplicativo {
         min-width: 350px;
@@ -174,6 +175,9 @@ button {
     .tarefas:hover {
         transform: none;
     }
+    .remover-tarefa {
+        margin-left: -12px; 
+    }
 
     .filtro {
         background-color: $input-bg;
@@ -186,12 +190,15 @@ button {
         width: 86%;
     } 
 
+    .tarefas-ativas {
+        padding-left: 20px;
+    }
+
     .detalhes-tarefas button:hover {
         color: none;
     }
  
     .filtro {
         border-radius: 0.3rem;
-
     }
 }
