@@ -1,7 +1,11 @@
+const tarefasApp = document.querySelector('.tarefas');
 const inserirTarefa = document.querySelector('#inserir-tarefa');
-const botaoEnterTarefa = document.querySelector('#btn-add-tarefa');
+const botaoEnterTarefa = document.querySelector('.btn-add-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 const itensRestantes = document.querySelector('.itens-restantes');
+const todasAsTarefas = document.querySelector(".todas-as-tarefas");
+const tarefasAtivas = document.querySelector(".tarefas-ativas");
+const tarefasFeitas = document.querySelector(".tarefas-feitas");
 
 class Tarefa {
   tarefa;
@@ -15,11 +19,23 @@ let contarTarefa = JSON.parse(localStorage.getItem("contarTarefa")) || 0;
 atualizarLista(lista);
 alteraContagemTarefa(contarTarefa);
 
-inserirTarefa.addEventListener('keyup', function (e) {
+inserirTarefa.addEventListener('keyup', function (event) {
 
-  let key = e.which || e.keyCode;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  let enter = e.which;
 
-  if (key == 13) {
+  if (enter == 13)  {
+=======
+  let enter = event.which;
+
+  if (enter == 13) {
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
+=======
+  let enter = event.which;
+
+  if (enter == 13) {
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
     conteudo = this.value;
 
     if (conteudo != '') {
@@ -41,12 +57,10 @@ inserirTarefa.addEventListener('keyup', function (e) {
   }
 });
 
-botaoEnterTarefa.addEventListener('click',()=>{
-  add();
-})
+
 
 function removerTarefa(id) {
-  e.preventDefault();
+  event.preventDefault();
 
   if (!lista[id].check) {
     contarTarefa--;
@@ -59,15 +73,14 @@ function removerTarefa(id) {
   salvarLocalStorage();
 }
 
-
 function atualizarLista(lista) {
   listaTarefas.innerHTML = '';
   for (let i = 0; i < lista.length; i++) {
     if (lista[i].check == false) {
       listaTarefas.innerHTML += `
-        <li class="tarefa">
+        <li class="tarefa-inserida">
           <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
-          <span class="check-tarefa"</span>
+          <span class="check"></span>
           <div class="tarefa-descricao">${lista[i].tarefa}</div>
           </a>
           
@@ -79,8 +92,8 @@ function atualizarLista(lista) {
     }
     else {
       listaTarefas.innerHTML += `
-        <li class="tarefa">
-          <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
+        <li class="tarefa-inserida">
+          <a href="#" class="tarefa-concluida marcar-tarefa-concluida" onclick="marcarTarefa(${i});">
             <span class="check"> 
             <img class="check-tarefa" src="../assets/icon-check.svg" alt="Tarefa concluída"></span>
             <div class="tarefa-descricao">${lista[i].tarefa}</div>
@@ -111,6 +124,42 @@ function marcarTarefa(id) {
   alteraContagemTarefa(contarTarefa);
   salvarLocalStorage();
 }
+
+/* function filtro(event) {
+ 
+  switch (event.target.classList[0]) {
+      case "tarefas-ativas":
+          for (item of tarefasApp) {
+              if (item[0].classList.contains("ativas"))
+                  item.style.display = "none";
+              else {
+                  item.style.display = "flex";
+                  atualizarLista(lista);
+              }
+          }
+          break;
+
+      case "todas-as-tarefas":
+          for (item of tarefasApp.children) {
+              item.style.display = "flex";
+              atualizarLista(lista);
+          }
+          break;
+          
+      case "tarefas-feitas":
+          for (item of tarefasApp) {
+              if (!item[0].classList.contains("ativas"))
+                  item.style.display = "none";
+              else {
+                  item.style.display = "flex";
+                  atualizarLista(lista);
+              }
+          }
+          break;
+  }
+}
+ */
+
 
 function limparTudo() {
 

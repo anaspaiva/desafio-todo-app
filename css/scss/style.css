@@ -78,17 +78,21 @@ textarea:focus, input:focus, select:focus {
   padding: 30px 0;
 }
 
+<<<<<<< HEAD
+=======
 #btn-add-tarefa {
-  margin: 17px 0;
+  margin: 19px 0;
 }
 
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 .check {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background: transparent;
   border: 1px solid #777a92;
-  cursor: pointer;
+  position: absolute;
+  left: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,9 +102,18 @@ textarea:focus, input:focus, select:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
-  left: 25px;
-  margin: -3px 0;
+  cursor: pointer;
+}
+
+.check .check-tarefa {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.check:hover {
+  border-color: #7256f0;
 }
 
 #inserir-tarefa {
@@ -117,8 +130,29 @@ textarea:focus, input:focus, select:focus {
   font-family: "Josefin Sans", sans-serif;
   margin-bottom: 30px;
   width: 89%;
-  -webkit-box-shadow: 0 0 1em #161722;
-          box-shadow: 0 0 1em #161722;
+  -webkit-box-shadow: 0 0.3rem 1rem #0b0b11;
+          box-shadow: 0 0.3rem 1rem #0b0b11;
+}
+
+.btn-add-tarefa {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: relative;
+  left: 30px;
+  bottom: 69.7px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #777a92;
+}
+
+#add-tarefa {
+  margin: 18px 0;
 }
 
 .tarefas {
@@ -127,9 +161,16 @@ textarea:focus, input:focus, select:focus {
   display: -ms-grid;
   display: grid;
   position: relative;
+<<<<<<< HEAD
+  -webkit-box-shadow: 0 0.3rem 1rem  #0b0b11;
+          box-shadow: 0 0.3rem 1rem  #0b0b11;
+=======
   -webkit-box-shadow: 0 0 1em #161722;
           box-shadow: 0 0 1em #161722;
-  color: #777a92;
+<<<<<<< HEAD
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
+=======
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 }
 
 .detalhes-tarefas {
@@ -154,56 +195,92 @@ button {
   cursor: pointer;
 }
 
-.detalhes-tarefas
+.itens-restantes {
+  color: #777a92;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
 .filtro button {
   margin-right: 20px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
 }
 
-.detalhes-tarefas
 .filtro button:hover {
   color: #fff;
 }
 
-.tarefa {
-  padding: 20px 0;
+.tarefa-inserida {
   border-bottom: solid 1px #4d5066;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 18px;
-}
-
-.tarefa .tarefa-descricao {
-  color: #e4e5f1;
-  cursor: auto;
-  margin-left: 60px;
-}
-
-.tarefa .remover-tarefa {
-  height: 15px;
-  width: 15px;
-}
-
-.check-tarefa {
-  background: transparent;
-  width: 20px;
-  height: 20px;
-  border: 1.75px solid #e4e5f1;
-  border-radius: 50% !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-size: 18px;
+  padding: 20px 0;
+}
+
+.tarefa-inserida .tarefa-descricao {
+  color: #e4e5f1;
+  cursor: pointer;
+  margin-left: 42px;
+  border-radius: 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.tarefa-inserida .remover-tarefa {
+  height: 12px;
+  width: 12px;
+}
+
+.tarefa-inserida .remover-tarefa:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.8ms;
+  transition: 0.8ms;
+}
+
+.marcar-tarefa-concluida :nth-child(1) {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+}
+
+=======
+=======
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
+}
+
+.tarefa-inserida .remover-tarefa {
+  height: 15px;
+  width: 15px;
+}
+
+.marcar-tarefa-concluida :nth-child(1) {
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
+}
+
+<<<<<<< HEAD
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
+=======
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
+.marcar-tarefa-concluida :nth-child(1) .check-tarefa {
+  background: transparent;
+}
+
+.marcar-tarefa-concluida :nth-child(2) {
+  text-decoration: line-through;
+  color: #777a92;
 }
 
 .tarefa-concluida {
@@ -214,23 +291,22 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-}
-
-.tarefa-concluida :nth-child(1) {
-  background: #57ddff, #c058f3;
-  border-color: #57ddff;
-}
-
-.tarefa-concluida :nth-child(2) {
-  text-decoration: line-through;
-  color: #777a92;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+=======
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
+=======
+>>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 }
 
 .detalhes-tarefas button {
   color: #777a92;
 }
 
-.detalhes-tarefas button.todas-as-tarefas {
+.detalhes-tarefas .todas-as-tarefas {
   color: #3a7bfd;
 }
 
@@ -243,7 +319,7 @@ button {
   color: #fff;
 }
 
-@media (max-width: 768px) and (min-width: 300px) {
+@media (max-width: 768px) {
   .aplicativo {
     min-width: 350px;
   }
@@ -260,6 +336,9 @@ button {
     -webkit-transform: none;
             transform: none;
   }
+  .remover-tarefa {
+    margin-left: -12px;
+  }
   .filtro {
     background-color: #25273c;
     display: -webkit-box;
@@ -273,6 +352,9 @@ button {
     left: 0;
     padding: 10px 25px;
     width: 86%;
+  }
+  .tarefas-ativas {
+    padding-left: 20px;
   }
   .detalhes-tarefas button:hover {
     color: none;
