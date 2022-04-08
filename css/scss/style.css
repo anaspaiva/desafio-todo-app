@@ -78,13 +78,10 @@ textarea:focus, input:focus, select:focus {
   padding: 30px 0;
 }
 
-<<<<<<< HEAD
-=======
 #btn-add-tarefa {
   margin: 19px 0;
 }
 
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 .check {
   width: 20px;
   height: 20px;
@@ -161,16 +158,8 @@ textarea:focus, input:focus, select:focus {
   display: -ms-grid;
   display: grid;
   position: relative;
-<<<<<<< HEAD
-  -webkit-box-shadow: 0 0.3rem 1rem  #0b0b11;
-          box-shadow: 0 0.3rem 1rem  #0b0b11;
-=======
   -webkit-box-shadow: 0 0 1em #161722;
           box-shadow: 0 0 1em #161722;
-<<<<<<< HEAD
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
-=======
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 }
 
 .detalhes-tarefas {
@@ -229,8 +218,6 @@ button {
   cursor: pointer;
   margin-left: 42px;
   border-radius: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -251,29 +238,9 @@ button {
 }
 
 .marcar-tarefa-concluida :nth-child(1) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
-  background: linear-gradient(#57ddff, #c058f3);
+   background: linear-gradient(#57ddff, #c058f3);
 }
 
-=======
-=======
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
-}
-
-.tarefa-inserida .remover-tarefa {
-  height: 15px;
-  width: 15px;
-}
-
-.marcar-tarefa-concluida :nth-child(1) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
-  background: linear-gradient(#57ddff, #c058f3);
-}
-
-<<<<<<< HEAD
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
-=======
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 .marcar-tarefa-concluida :nth-child(1) .check-tarefa {
   background: transparent;
 }
@@ -291,15 +258,9 @@ button {
       -ms-flex-align: center;
           align-items: center;
   width: 90%;
-<<<<<<< HEAD
-<<<<<<< HEAD
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-=======
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
-=======
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
 }
 
 .detalhes-tarefas button {
@@ -335,6 +296,9 @@ button {
   .tarefas:hover {
     -webkit-transform: none;
             transform: none;
+  }
+  .remover-tarefa {
+    margin-left: -12px;
   }
   .remover-tarefa {
     margin-left: -12px;

@@ -21,23 +21,11 @@ alteraContagemTarefa(contarTarefa);
 
 inserirTarefa.addEventListener('keyup', function (event) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  let enter = e.which;
-
-  if (enter == 13)  {
-=======
   let enter = event.which;
-
+  
   if (enter == 13) {
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
-=======
-  let enter = event.which;
-
-  if (enter == 13) {
->>>>>>> 8e4c431d0b33a177e3bf25687ca4186b44679181
     conteudo = this.value;
-
+    
     if (conteudo != '') {
 
       fazerTarefa = new Tarefa;
@@ -58,9 +46,8 @@ inserirTarefa.addEventListener('keyup', function (event) {
 });
 
 
-
 function removerTarefa(id) {
-  event.preventDefault();
+  e.preventDefault();
 
   if (!lista[id].check) {
     contarTarefa--;
