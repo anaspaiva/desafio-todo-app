@@ -3,6 +3,7 @@ const inserirTarefa = document.querySelector('#inserir-tarefa');
 const botaoEnterTarefa = document.querySelector('.btn-add-tarefa');
 const listaTarefas = document.querySelector('#lista-tarefas');
 const itensRestantes = document.querySelector('.itens-restantes');
+const filtro = document.querySelector ('.filtro'); 
 const todasAsTarefas = document.querySelector(".todas-as-tarefas");
 const tarefasAtivas = document.querySelector(".tarefas-ativas");
 const tarefasFeitas = document.querySelector(".tarefas-feitas");
@@ -47,7 +48,7 @@ inserirTarefa.addEventListener('keyup', function (event) {
 
 
 function removerTarefa(id) {
-  e.preventDefault();
+  event.preventDefault();
 
   if (!lista[id].check) {
     contarTarefa--;
@@ -66,29 +67,29 @@ function atualizarLista(lista) {
     if (lista[i].check == false) {
       listaTarefas.innerHTML += `
         <li class="tarefa-inserida">
-          <a href="#" class="tarefa-concluida" onclick="marcarTarefa(${i});">
+          <div class="tarefa-concluida" onclick="marcarTarefa(${i});">
           <span class="check"></span>
           <div class="tarefa-descricao">${lista[i].tarefa}</div>
-          </a>
+          </div>
           
-          <a href="#" class="remover-tarefa" onclick="removerTarefa(${i});">
+          <div class="remover-tarefa" onclick="removerTarefa(${i});">
             <img class="remover-tarefa" src="../assets/icon-cross.svg" alt="Remover Tarefa">
-          </a>
+          </div>
         </li>
       `;
     }
     else {
       listaTarefas.innerHTML += `
         <li class="tarefa-inserida">
-          <a href="#" class="tarefa-concluida marcar-tarefa-concluida" onclick="marcarTarefa(${i});">
+          <div class="tarefa-concluida marcar-tarefa-concluida" onclick="marcarTarefa(${i});">
             <span class="check"> 
             <img class="check-tarefa" src="../assets/icon-check.svg" alt="Tarefa concluída"></span>
             <div class="tarefa-descricao">${lista[i].tarefa}</div>
-          </a>
+          </div>
           
-          <a href="#" class="remover-tarefa" onclick="removerTarefa(${i});">
+          <div class="remover-tarefa" onclick="removerTarefa(${i});">
             <img class="remover-tarefa" src="../assets/icon-cross.svg"  alt="Remover Tarefa">
-          </a>
+          </div>
         </li>
       `;
     }
@@ -112,40 +113,8 @@ function marcarTarefa(id) {
   salvarLocalStorage();
 }
 
-/* function filtro(event) {
- 
-  switch (event.target.classList[0]) {
-      case "tarefas-ativas":
-          for (item of tarefasApp) {
-              if (item[0].classList.contains("ativas"))
-                  item.style.display = "none";
-              else {
-                  item.style.display = "flex";
-                  atualizarLista(lista);
-              }
-          }
-          break;
+//filtro 
 
-      case "todas-as-tarefas":
-          for (item of tarefasApp.children) {
-              item.style.display = "flex";
-              atualizarLista(lista);
-          }
-          break;
-          
-      case "tarefas-feitas":
-          for (item of tarefasApp) {
-              if (!item[0].classList.contains("ativas"))
-                  item.style.display = "none";
-              else {
-                  item.style.display = "flex";
-                  atualizarLista(lista);
-              }
-          }
-          break;
-  }
-}
- */
 
 
 function limparTudo() {

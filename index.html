@@ -29,21 +29,20 @@
       <div class="tarefas"> 
         <ul id="lista-tarefas"></ul>
         <div class="detalhes-tarefas">
-          <div class="itens-restantes">0 itens restantes</div>
+          <div class="itens-restantes" type="text">0 itens restantes</div>
           <div class="filtro">
-            <button class="todas-as-tarefas">Tudo</button>
-            <button class="tarefas-ativas">A fazer</button>
-            <button class="tarefas-feitas">Feito</button>
+            <button onclick="filtrarTarefas()" class="todas-as-tarefas data-filter">Tudo</button>
+            <button onclick="filtrarTarefas()" class="tarefas-ativas data-filter">A fazer</button>
+            <button onclick="filtrarTarefas()" class="tarefas-feitas data-filter">Feito</button>
           </div>
           <div class="limpar">
-            <button onclick="limparTudo()" class="botao-limpar" >Limpar tudo</button>
+            <button onclick="limparTudo()" class="botao-limpar">Limpar tudo</button>
           </div>
         </div>
       </div>
     </div>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
 
 </body>
 </html>

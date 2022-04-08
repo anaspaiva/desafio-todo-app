@@ -61,11 +61,10 @@ textarea:focus, input:focus, select:focus {
 }
 
 .aplicativo {
-  width: 40%;
+  width: 550px;
   min-width: 300px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
   padding-top: 50px;
 }
 
@@ -155,8 +154,6 @@ textarea:focus, input:focus, select:focus {
 .tarefas {
   background-color: #25273c;
   border-radius: 0.3rem;
-  display: -ms-grid;
-  display: grid;
   position: relative;
   -webkit-box-shadow: 0 0 1em #161722;
           box-shadow: 0 0 1em #161722;
@@ -172,8 +169,7 @@ textarea:focus, input:focus, select:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
-  margin: 10px;
+  padding: 20px;
   font-size: 12px;
 }
 
@@ -186,9 +182,9 @@ button {
 
 .itens-restantes {
   color: #777a92;
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
+  padding-left: 10px;
+  font-size: 12px;
+  width: 100px;
 }
 
 .filtro button {
@@ -228,6 +224,7 @@ button {
 .tarefa-inserida .remover-tarefa {
   height: 12px;
   width: 12px;
+  padding-left: -20px;
 }
 
 .tarefa-inserida .remover-tarefa:hover {
@@ -238,7 +235,8 @@ button {
 }
 
 .marcar-tarefa-concluida :nth-child(1) {
-   background: linear-gradient(#57ddff, #c058f3);
+  background: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background: linear-gradient(#57ddff, #c058f3);
 }
 
 .marcar-tarefa-concluida :nth-child(1) .check-tarefa {
@@ -282,7 +280,7 @@ button {
 
 @media (max-width: 768px) {
   .aplicativo {
-    min-width: 350px;
+    width: 350px;
   }
   .aplicativo .titulo {
     padding-top: 10px;
@@ -292,13 +290,11 @@ button {
     padding: 5px 33px;
     padding-left: 60px;
   }
-  .adiciona-tarefa:hover,
-  .tarefas:hover {
+  .adiciona-tarefa,
+  .tarefas
+.remover-tarefa:hover {
     -webkit-transform: none;
             transform: none;
-  }
-  .remover-tarefa {
-    margin-left: -12px;
   }
   .remover-tarefa {
     margin-left: -12px;
@@ -308,23 +304,18 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
     position: absolute;
     bottom: -60px;
     left: 0;
     padding: 10px 25px;
     width: 86%;
+    border-radius: 0.3rem;
   }
   .tarefas-ativas {
     padding-left: 20px;
-  }
-  .detalhes-tarefas button:hover {
-    color: none;
-  }
-  .filtro {
-    border-radius: 0.3rem;
   }
 }
 
