@@ -23,7 +23,7 @@
         <span class="check" id="add-tarefa"></span>
         <input type="text" id="inserir-tarefa" 
         placeholder="Criar nova tarefa...">
-        <button type="submit" class="btn-add-tarefa">+</button> 
+        <p class="icone-add-tarefa">+</p> 
       </div>
     
       <div class="tarefas"> 
@@ -31,9 +31,9 @@
         <div class="detalhes-tarefas">
           <div class="itens-restantes" type="text">0 itens restantes</div>
           <div class="filtro">
-            <button onclick="filtrarTarefas()" class="todas-as-tarefas data-filter">Tudo</button>
-            <button onclick="filtrarTarefas()" class="tarefas-ativas data-filter">A fazer</button>
-            <button onclick="filtrarTarefas()" class="tarefas-feitas data-filter">Feito</button>
+            <button onclick="atualizarLista()" class="todas-as-tarefas">Tudo</button>
+            <button onclick="filtrarTarefas(false)" class="tarefas-ativas">A fazer</button>
+            <button onclick="filtrarTarefas(true)" class="tarefas-feitas">Feito</button>
           </div>
           <div class="limpar">
             <button onclick="limparTudo()" class="botao-limpar">Limpar tudo</button>
@@ -42,7 +42,7 @@
       </div>
     </div>
     
-    <script src="/js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>

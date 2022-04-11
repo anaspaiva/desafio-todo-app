@@ -17,6 +17,7 @@
 #btn-add-tarefa {
     margin: 19px 0;
 }
+
 .check {
     width: 20px;
     height: 20px;
@@ -54,23 +55,19 @@
     border: none;
     font-size: 18px;
     font-family: $fonte;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     width: 89%;
     box-shadow: 0 0.3rem 1rem #0b0b11;
-    
 }
 
-.btn-add-tarefa {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+.icone-add-tarefa {
     position: relative;
-    left: 30px;
-    bottom: 69.7px;
+    left: 30.7px;
+    bottom: 51.6px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
     color: $az-cz-escuro;
+    font-size: 20px;
+    width: 1px;
 }
 
 #add-tarefa {
@@ -135,6 +132,7 @@ button {
         height: 12px;
         width: 12px;
         padding-left: -20px;
+        cursor: pointer;
         &:hover {
             transform: scale(1.2);
             transition: 0.8ms;
@@ -165,10 +163,6 @@ button {
 
 .detalhes-tarefas button {
     color: $az-cz-escuro;
-}
-
-.detalhes-tarefas .todas-as-tarefas {
-    color: $btn-filtro;
 }
 
 .botao-limpar {
@@ -206,6 +200,9 @@ button {
         margin-left: -12px; 
     }
 
+    .icone-add-tarefa {
+        bottom: 52.5px;
+    }
     .filtro {
         background-color: $input-bg;
         display: flex;
