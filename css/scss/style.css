@@ -212,20 +212,31 @@ button {
   display: flex;
   -ms-flex-line-pack: center;
       align-content: center;
+  word-break: break-word;
+  max-width: 430px;
 }
 
-.tarefa-inserida .remover-tarefa {
+.tarefa-inserida .cross {
   height: 12px;
   width: 12px;
   padding-left: -20px;
   cursor: pointer;
 }
 
-.tarefa-inserida .remover-tarefa:hover {
+.tarefa-inserida .cross:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   -webkit-transition: 0.8ms;
   transition: 0.8ms;
+}
+
+.remover-tarefa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .marcar-tarefa-concluida :nth-child(1) {
@@ -286,11 +297,23 @@ button {
     -webkit-transform: none;
             transform: none;
   }
-  .remover-tarefa {
-    margin-left: -12px;
-  }
   .icone-add-tarefa {
     bottom: 52.5px;
+  }
+  .tarefa-descricao {
+    width: 250px;
+  }
+  .tarefa-concluida {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 88%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
   .filtro {
     background-color: #25273c;

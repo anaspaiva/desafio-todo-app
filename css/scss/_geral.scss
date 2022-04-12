@@ -120,15 +120,17 @@ button {
     font-size: 18px;
     padding: 20px 0;
 
-    .tarefa-descricao{
+    .tarefa-descricao {
         color: $az-cz-claro;
         cursor:pointer;
         margin-left: 42px;
         border-radius: 0;
         display: flex;
         align-content: center;
+        word-break: break-word;
+        max-width: 430px;
     } 
-    .remover-tarefa {
+    .cross {
         height: 12px;
         width: 12px;
         padding-left: -20px;
@@ -136,8 +138,13 @@ button {
         &:hover {
             transform: scale(1.2);
             transition: 0.8ms;
-        }
-    } 
+        } 
+    }
+}
+
+.remover-tarefa {
+    display: flex;
+    align-items: center;
 }
 
 .marcar-tarefa-concluida  {
@@ -196,13 +203,21 @@ button {
         transform: none;
     }
 
-    .remover-tarefa {
-        margin-left: -12px; 
-    }
-
     .icone-add-tarefa {
         bottom: 52.5px;
     }
+
+    .tarefa-descricao {
+        width: 250px;
+    }
+
+    .tarefa-concluida{
+        display: flex;
+        align-items: center;
+        width: 88%;
+        justify-content:start;
+    }
+
     .filtro {
         background-color: $input-bg;
         display: flex;

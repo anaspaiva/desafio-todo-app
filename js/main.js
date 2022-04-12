@@ -54,6 +54,8 @@ function removerTarefa(id) {
   salvarLocalStorage();
 }
 
+// Atualizar a lista quando as tarefas forem adicionadas ou removidas
+
 function atualizarLista(listaAtual) {
   listaTarefas.innerHTML = '';
   let listas = typeof (listaAtual) != "undefined" ? listaAtual : lista;
@@ -68,7 +70,7 @@ function atualizarLista(listaAtual) {
           </div>
           
           <div class="remover-tarefa" onclick="removerTarefa(${i});">
-            <img class="remover-tarefa" src="../assets/icon-cross.svg" alt="Remover Tarefa">
+            <img class="cross" src="/assets/icon-cross.svg" alt="Remover Tarefa">
           </div>
         </li>
       `;
@@ -83,7 +85,7 @@ function atualizarLista(listaAtual) {
           </div>
           
           <div class="remover-tarefa" onclick="removerTarefa(${i});">
-            <img class="remover-tarefa" src="../assets/icon-cross.svg"  alt="Remover Tarefa">
+            <img class="cross" src="/assets/icon-cross.svg"  alt="Remover Tarefa">
           </div>
         </li>
       `;
