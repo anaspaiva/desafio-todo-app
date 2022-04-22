@@ -60,6 +60,16 @@ textarea:focus, input:focus, select:focus {
   outline: 0;
 }
 
+body {
+  background: #161722;
+  background-image: url("../../assets/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+}
+
 .aplicativo {
   width: 550px;
   min-width: 300px;
@@ -133,8 +143,8 @@ textarea:focus, input:focus, select:focus {
 .icone-add-tarefa {
   position: relative;
   left: 30.7px;
-  bottom: 51.6px;
-  cursor: pointer;
+  bottom: 52.5px;
+  cursor: default;
   color: #777a92;
   font-size: 20px;
   width: 1px;
@@ -142,6 +152,7 @@ textarea:focus, input:focus, select:focus {
 
 #add-tarefa {
   margin: 18px 0;
+  cursor: default;
 }
 
 .tarefas {
@@ -166,13 +177,6 @@ textarea:focus, input:focus, select:focus {
   font-size: 12px;
 }
 
-button {
-  background: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
 .itens-restantes {
   color: #777a92;
   padding-left: 10px;
@@ -180,14 +184,23 @@ button {
   width: 100px;
 }
 
-.filtro button {
+button {
   margin-right: 20px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #777a92;
 }
 
-.filtro button:hover {
+button:hover {
   color: #fff;
+}
+
+button:focus {
+  color: #3a7bfd !important;
 }
 
 .tarefa-inserida {
@@ -198,6 +211,9 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 18px;
   padding: 20px 0;
 }
@@ -205,7 +221,7 @@ button {
 .tarefa-inserida .tarefa-descricao {
   color: #e4e5f1;
   cursor: pointer;
-  margin-left: 42px;
+  margin-left: 40px;
   border-radius: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -216,27 +232,26 @@ button {
   max-width: 430px;
 }
 
-.tarefa-inserida .cross {
+.tarefa-inserida .cross,
+.tarefa-inserida .remover-tarefa {
   height: 12px;
   width: 12px;
   padding-left: -20px;
   cursor: pointer;
-}
-
-.tarefa-inserida .cross:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  -webkit-transition: 0.8ms;
-  transition: 0.8ms;
-}
-
-.remover-tarefa {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.tarefa-inserida .cross:hover,
+.tarefa-inserida .remover-tarefa:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.8ms;
+  transition: 0.8ms;
 }
 
 .marcar-tarefa-concluida :nth-child(1) {
@@ -266,10 +281,6 @@ button {
           justify-content: start;
 }
 
-.detalhes-tarefas button {
-  color: #777a92;
-}
-
 .botao-limpar {
   font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
@@ -280,6 +291,9 @@ button {
 }
 
 @media (max-width: 768px) {
+  body {
+    background-image: url("../../assets/bg-mobile-dark.jpg");
+  }
   .aplicativo {
     width: 350px;
   }
@@ -296,9 +310,6 @@ button {
 .remover-tarefa:hover {
     -webkit-transform: none;
             transform: none;
-  }
-  .icone-add-tarefa {
-    bottom: 52.5px;
   }
   .tarefa-descricao {
     width: 250px;
@@ -332,22 +343,6 @@ button {
   }
   .tarefas-ativas {
     padding-left: 20px;
-  }
-}
-
-body {
-  background: #161722;
-  background-image: url("../../assets/bg-desktop-dark.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  color: #fff;
-  font-family: "Josefin Sans", sans-serif;
-  min-height: 100vh;
-}
-
-@media (max-width: 768px) and (min-width: 300px) {
-  body {
-    background-image: url("../../assets/bg-mobile-dark.jpg");
   }
 }
 /*# sourceMappingURL=style.css.map */

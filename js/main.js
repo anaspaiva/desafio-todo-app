@@ -8,49 +8,25 @@ class Tarefa {
   check = false;
 }
 
-let conteudo;
-let lista = JSON.parse(localStorage.getItem("listaTarefa")) || [];
+// Salvar os dados da lista
+
+function salvarLocalStorage() {
+  localStorage.setItem("listaTarefas", JSON.stringify(lista));
+  localStorage.setItem("contarTarefa", JSON.stringify(contarTarefa));
+}
+
+// Recuperando os dados da lista 
+
+let lista = JSON.parse(localStorage.getItem("listaTarefas")) || [];
 let contarTarefa = JSON.parse(localStorage.getItem("contarTarefa")) || 0;
 
 atualizarLista(lista);
 alteraContagemTarefa(contarTarefa);
 
+// Contagem de tarefas 
 
-// Adicionar tarefa com botão enter 
-
-inserirTarefa.addEventListener('keyup', function (event) {
-
-  let enter = event.which;
-  
-  if (enter == 13) {
-    conteudo = this.value;
-    
-    if (conteudo != '') {
-      fazerTarefa = new Tarefa;
-      fazerTarefa.tarefa = conteudo;
-      lista.push(fazerTarefa);
-      
-      atualizarLista(lista);
-      contarTarefa++;
-      alteraContagemTarefa(contarTarefa);
-    } 
-    document.querySelector('#inserir-tarefa').value = null;
-  }
-});
-
-// Funçaõ de remover tarefa individualmente 
-
-function removerTarefa(id) {
-  event.preventDefault();
-
-  if (!lista[id].check) {
-    contarTarefa--;
-    alteraContagemTarefa(contarTarefa);
-  }
-
-  lista.splice(id, 1);
-
-  atualizarLista(lista);
+function alteraContagemTarefa(contarTarefa) {
+  itensRestantes.innerHTML = `${contarTarefa} itens restantes`;
   salvarLocalStorage();
 }
 
@@ -58,8 +34,7 @@ function removerTarefa(id) {
 
 function atualizarLista(listaAtual) {
   listaTarefas.innerHTML = '';
-  let listas = typeof (listaAtual) != "undefined" ? listaAtual : lista;
-  
+  let listas = typeof (listaAtual) != "undefined" ? listaAtual : lista; //verificar
   for (let i = 0; i < listas.length; i++) {
     if (listas[i].check == false) {
       listaTarefas.innerHTML += `
@@ -70,7 +45,7 @@ function atualizarLista(listaAtual) {
           </div>
           
           <div class="remover-tarefa" onclick="removerTarefa(${i});">
-            <img class="cross" src="/assets/icon-cross.svg" alt="Remover Tarefa">
+            <img class="cross" src="./assets/icon-cross.svg" alt="Remover Tarefa">
           </div>
         </li>
       `;
@@ -80,17 +55,54 @@ function atualizarLista(listaAtual) {
         <li class="tarefa-inserida">
           <div class="tarefa-concluida marcar-tarefa-concluida" onclick="marcarTarefa(${i});">
             <span class="check"> 
-            <img class="check-tarefa" src="../assets/icon-check.svg" alt="Tarefa concluída"></span>
+            <img class="check-tarefa" src="./assets/icon-check.svg" alt="Tarefa concluída"></span>
             <div class="tarefa-descricao">${listas[i].tarefa}</div>
           </div>
           
-          <div class="remover-tarefa" onclick="removerTarefa(${i});">
-            <img class="cross" src="/assets/icon-cross.svg"  alt="Remover Tarefa">
+          <div class="remover-tarefa" onclick="removerTarefa(${!i});">
+            <img class="cross" src="./assets/icon-cross.svg"  alt="Remover Tarefa">
           </div>
         </li>
       `;
     }
   }
+}
+
+// Adicionar tarefa com botão enter 
+
+inserirTarefa.addEventListener('keyup', function (event) {
+  let conteudo;
+  let enter = event.which;
+  
+  if (enter == 13) {
+    conteudo = this.value;
+    
+    if (conteudo != '') {
+      fazerTarefa = new Tarefa;
+      fazerTarefa.tarefa = conteudo;
+      lista.push(fazerTarefa);
+      atualizarLista(lista);
+      contarTarefa++;
+      alteraContagemTarefa(contarTarefa);
+    } 
+
+    document.querySelector('#inserir-tarefa').value = null;
+  }
+});
+
+// Função de remover tarefa individualmente 
+
+function removerTarefa(id) {
+  event.preventDefault();
+
+  if (!lista[id].check) {
+    contarTarefa--;
+    alteraContagemTarefa(contarTarefa);
+  }
+
+  lista.splice(id, 1);
+  atualizarLista(lista);
+  salvarLocalStorage();
 }
 
 // Marcar (riscar) tarefa concluída
@@ -117,10 +129,10 @@ function marcarTarefa(id) {
 function filtrarTarefas(filtro) {
   listaTarefas.innerHTML = '';
   funcao1 = filtro ? "marcar-tarefa-concluida" : "";
-  funcao2 = filtro ? `<img class="check-tarefa" src="../assets/icon-check.svg" alt="Tarefa concluída">` : ""
+  funcao2 = filtro ? `<img class="check-tarefa" src="./assets/icon-check.svg" alt="Tarefa concluída">` : "" 
   lista
-    .filter(todo => todo.check === filtro)
-    .map((todo, i) => {
+    .filter (todo => todo.check === filtro)
+    .map ((todo, i) => {
       listaTarefas.innerHTML += `
         <li class="tarefa-inserida">
           <div class="tarefa-concluida ${funcao1}" onclick="marcarTarefa(${i});">
@@ -129,8 +141,8 @@ function filtrarTarefas(filtro) {
           <div class="tarefa-descricao">${todo.tarefa}</div>
           </div>
           
-          <div class="remover-tarefa" onclick="removerTarefa(${!i});">
-            <img class="remover-tarefa" src="../assets/icon-cross.svg" alt="Remover Tarefa">
+          <div class="remover-tarefa" onclick="removerTarefa(${i});">
+            <img class="remover-tarefa" src="./assets/icon-cross.svg" alt="Remover Tarefa">
           </div>
         </li>
       `;
@@ -146,16 +158,4 @@ function limparTudo() {
 
   contarTarefa = 0;
   alteraContagemTarefa(contarTarefa);
-}
-
-// Contagem de tarefas 
-
-function alteraContagemTarefa(contarTarefa) {
-  itensRestantes.innerHTML = `${contarTarefa} itens restantes`;
-  salvarLocalStorage();
-}
-
-function salvarLocalStorage() {
-  localStorage.setItem("listaTarefa", JSON.stringify(lista));
-  localStorage.setItem("contarTarefa", JSON.stringify(contarTarefa));
 }

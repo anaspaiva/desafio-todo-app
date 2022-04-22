@@ -166,13 +166,6 @@ textarea:focus, input:focus, select:focus {
   font-size: 12px;
 }
 
-button {
-  background: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-}
-
 .itens-restantes {
   color: #777a92;
   padding-left: 10px;
@@ -180,14 +173,25 @@ button {
   width: 100px;
 }
 
-.filtro button {
+.filtro button,
+.botao-limpar {
   margin-right: 20px;
   font-family: "Josefin Sans", sans-serif;
   font-size: 12px;
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
-.filtro button:hover {
+.filtro button:hover,
+.botao-limpar:hover {
   color: #fff;
+}
+
+.filtro button:focus,
+.botao-limpar:focus {
+  color: #3a7bfd;
 }
 
 .tarefa-inserida {
@@ -198,6 +202,9 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 18px;
   padding: 20px 0;
 }
@@ -205,7 +212,7 @@ button {
 .tarefa-inserida .tarefa-descricao {
   color: #e4e5f1;
   cursor: pointer;
-  margin-left: 42px;
+  margin-left: 40px;
   border-radius: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -216,14 +223,14 @@ button {
   max-width: 430px;
 }
 
-.tarefa-inserida .cross {
+.tarefa-inserida .cross, .tarefa-inserida .remover-tarefa {
   height: 12px;
   width: 12px;
   padding-left: -20px;
   cursor: pointer;
 }
 
-.tarefa-inserida .cross:hover {
+.tarefa-inserida .cross:hover, .tarefa-inserida .remover-tarefa:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   -webkit-transition: 0.8ms;

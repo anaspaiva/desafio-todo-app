@@ -1,4 +1,247 @@
 @import 'reset';
 @import 'variaveis';
-@import 'geral';
-@import 'body';
+
+body {
+    background: $bg;
+    background-image: $bg-img-dsk;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: $branco;
+    font-family: $fonte;
+    min-height: 100vh;
+}
+
+// Aplicativo
+
+.aplicativo {
+    width: 550px;
+    min-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 50px;
+    .titulo {
+        font-size: 30px;
+        font-weight: 700;
+        box-sizing: border-box;
+        letter-spacing: 5px;
+        padding: 30px 0;
+    }
+}
+
+#btn-add-tarefa {
+    margin: 19px 0;
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid $az-cz-escuro;
+    position: absolute;
+    left: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .check-tarefa {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: transparent; 
+    }
+}
+
+.check:hover {
+    border-color: hsl(251, 84%, 64%);
+}
+
+#inserir-tarefa {
+    background-color: $input-bg;
+    display: block;
+    color: $branco;
+    border-radius: 0.3rem;
+    height: 50px;
+    padding: 5px 0px;
+    padding-left: 60px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-family: $fonte;
+    margin-bottom: 10px;
+    width: 89%;
+    box-shadow: 0 0.3rem 1rem #0b0b11;
+}
+
+.icone-add-tarefa {
+    position: relative;
+    left: 30.7px;
+    bottom: 52.5px;
+    cursor: default;
+    color: $az-cz-escuro;
+    font-size: 20px;
+    width: 1px;
+    
+}
+
+#add-tarefa {
+    margin: 18px 0;
+    cursor: default;
+}
+
+.tarefas {
+    background-color: $input-bg;
+    border-radius: 0.3rem;
+    position: relative;
+    box-shadow: 0 0 1em #161722;
+}
+
+.detalhes-tarefas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.itens-restantes {
+    color: $az-cz-escuro;
+    padding-left: 10px;
+    font-size: 12px;
+    width: 100px;
+}
+
+button {
+    margin-right: 20px;
+    font-family: $fonte;
+    font-size: 12px;
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: $az-cz-escuro;
+    &:hover {
+        color: $branco;
+    }
+    &:focus {
+        color: $btn-filtro !important;
+        }
+}
+
+.tarefa-inserida {
+    border-bottom: solid 1px $cinza;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 20px 0;
+    .tarefa-descricao {
+        color: $az-cz-claro;
+        cursor:pointer;
+        margin-left: 40px;
+        border-radius: 0;
+        display: flex;
+        align-content: center;
+        word-break: break-word;
+        max-width: 430px;
+    } 
+    .cross, 
+    .remover-tarefa {
+        height: 12px;
+        width: 12px;
+        padding-left: -20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        &:hover {
+            transform: scale(1.2);
+            transition: 0.8ms;
+        } 
+    }
+}
+
+.marcar-tarefa-concluida  {
+    :nth-child(1){
+        background: $gradient; 
+        .check-tarefa {
+        background: transparent;
+        }
+    }
+
+    :nth-child(2){
+        text-decoration: line-through;
+        color: $az-cz-escuro;
+    }
+}
+
+.tarefa-concluida{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content:start;
+}
+
+.botao-limpar {
+    font-family: $fonte;
+    font-size: 12px;
+    &:hover {
+        color: $branco;
+    }
+}
+
+
+// Mobile
+
+@media (max-width: 768px){
+
+    body {
+        background-image: $bg-img-mb;
+        }
+
+    .aplicativo {
+        width: 350px;
+        .titulo { 
+            padding-top: 10px;
+        }
+    }
+
+    #inserir-tarefa {
+        width: 73%;
+        padding: 5px 33px;
+        padding-left: 60px;
+    }
+    
+    .adiciona-tarefa,
+    .tarefas
+    .remover-tarefa:hover {
+        transform: none;
+    }
+
+    .tarefa-descricao {
+        width: 250px;
+    }
+
+    .tarefa-concluida{
+        display: flex;
+        align-items: center;
+        width: 88%;
+        justify-content:start;
+    }
+
+    .filtro {
+        background-color: $input-bg;
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        padding:  10px 25px;
+        width: 86%;
+        border-radius: 0.3rem;
+    } 
+
+    .tarefas-ativas {
+        padding-left: 20px;
+    }
+}

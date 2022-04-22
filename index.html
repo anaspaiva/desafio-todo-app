@@ -9,14 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;400;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./css/scss/style.css">
 
   <title>Frontend Mentor | To-do app</title>
 
 </head>
 
 <body>
-    
+    <main>
     <div class="aplicativo">
       <h1 class="titulo"> T O D O </h1>
       <div class="adiciona-tarefa">
@@ -28,21 +28,26 @@
     
       <div class="tarefas"> 
         <ul id="lista-tarefas"></ul>
+        
         <div class="detalhes-tarefas">
-          <div class="itens-restantes" type="text">0 itens restantes</div>
+          
+          <div class="itens-restantes" type="text"> 0 itens restantes</div>
+          
           <div class="filtro">
             <button onclick="atualizarLista()" class="todas-as-tarefas">Tudo</button>
             <button onclick="filtrarTarefas(false)" class="tarefas-ativas">A fazer</button>
             <button onclick="filtrarTarefas(true)" class="tarefas-feitas">Feito</button>
           </div>
+          
           <div class="limpar">
             <button onclick="limparTudo()" class="botao-limpar">Limpar tudo</button>
           </div>
         </div>
       </div>
     </div>
+  </main>
     
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 </html>
