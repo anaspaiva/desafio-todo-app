@@ -20,8 +20,8 @@ function salvarLocalStorage() {
 let lista = JSON.parse(localStorage.getItem("listaTarefas")) || [];
 let contarTarefa = JSON.parse(localStorage.getItem("contarTarefa")) || 0;
 
-atualizarLista(lista);
 alteraContagemTarefa(contarTarefa);
+atualizarLista(lista);
 
 // Contagem de tarefas 
 
@@ -34,7 +34,7 @@ function alteraContagemTarefa(contarTarefa) {
 
 function atualizarLista(listaAtual) {
   listaTarefas.innerHTML = '';
-  let listas = typeof (listaAtual) != "undefined" ? listaAtual : lista; //verificar
+  let listas = typeof (listaAtual) != "undefined" ? listaAtual : lista; 
   for (let i = 0; i < listas.length; i++) {
     if (listas[i].check == false) {
       listaTarefas.innerHTML += `
@@ -59,7 +59,7 @@ function atualizarLista(listaAtual) {
             <div class="tarefa-descricao">${listas[i].tarefa}</div>
           </div>
           
-          <div class="remover-tarefa" onclick="removerTarefa(${!i});">
+          <div class="remover-tarefa" onclick="removerTarefa(${i});">
             <img class="cross" src="./assets/icon-cross.svg"  alt="Remover Tarefa">
           </div>
         </li>
@@ -95,15 +95,13 @@ inserirTarefa.addEventListener('keyup', function (event) {
 function removerTarefa(id) {
   event.preventDefault();
 
-  if (!lista[id].check) {
-    contarTarefa--;
-    alteraContagemTarefa(contarTarefa);
+  const index = lista.indexOf(lista[id]);
+  if (index > -1) {
+    lista.splice(index, 1);
   }
-
-  lista.splice(id, 1);
   atualizarLista(lista);
   salvarLocalStorage();
-}
+  }
 
 // Marcar (riscar) tarefa concluída
 
@@ -131,9 +129,9 @@ function filtrarTarefas(filtro) {
   funcao1 = filtro ? "marcar-tarefa-concluida" : "";
   funcao2 = filtro ? `<img class="check-tarefa" src="./assets/icon-check.svg" alt="Tarefa concluída">` : "" 
   lista
-    .filter (todo => todo.check === filtro)
     .map ((todo, i) => {
-      listaTarefas.innerHTML += `
+      if (todo.check === filtro) {
+        listaTarefas.innerHTML += `
         <li class="tarefa-inserida">
           <div class="tarefa-concluida ${funcao1}" onclick="marcarTarefa(${i});">
           <span class="check">${funcao2}</span>
@@ -146,6 +144,7 @@ function filtrarTarefas(filtro) {
           </div>
         </li>
       `;
+      }
     });
 }
 

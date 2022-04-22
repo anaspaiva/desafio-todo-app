@@ -138,7 +138,7 @@ button {
     padding: 20px 0;
     .tarefa-descricao {
         color: $az-cz-claro;
-        cursor:pointer;
+        cursor: pointer;
         margin-left: 40px;
         border-radius: 0;
         display: flex;
@@ -150,7 +150,6 @@ button {
     .remover-tarefa {
         height: 12px;
         width: 12px;
-        padding-left: -20px;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -190,7 +189,6 @@ button {
     }
 }
 
-
 // Mobile
 
 @media (max-width: 768px){
@@ -228,7 +226,7 @@ button {
         width: 88%;
         justify-content:start;
     }
-
+   
     .filtro {
         background-color: $input-bg;
         display: flex;

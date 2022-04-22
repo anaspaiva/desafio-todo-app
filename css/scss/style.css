@@ -236,7 +236,6 @@ button:focus {
 .tarefa-inserida .remover-tarefa {
   height: 12px;
   width: 12px;
-  padding-left: -20px;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
